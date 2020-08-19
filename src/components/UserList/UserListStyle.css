@@ -1,0 +1,13 @@
+.styleListItem {
+  background-color: blue;
+}
+li {
+  margin: 20px auto;
+}
+label {
+  margin-bottom: 20px;
+}
+.selected {
+  color: white;
+  background-color: brown;
+}
