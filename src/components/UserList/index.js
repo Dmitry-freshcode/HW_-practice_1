@@ -11,10 +11,9 @@ class UserList extends Component {
     };
   }
 
-  mapUser = (user) => {
+  mapUser = (user, index) => {
     const selectUser = (user) => {
       const newUsers = [...this.state.users];
-      const index = newUsers.indexOf(user);
       newUsers[index].isSelected = !newUsers[index].isSelected;
       this.setState({
         users: newUsers,

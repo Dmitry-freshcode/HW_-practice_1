@@ -6,10 +6,6 @@ const ListItem = (props) => {
     onSelect,
   } = props;
 
-  const selected = () => {
-    onSelect(props.user);
-  };
-
   const UserDate = () => {
     return (
       <span className={isSelected ? 'selected' : undefined}>
@@ -25,7 +21,7 @@ const ListItem = (props) => {
     <li>
       <UserDate />
       <label>
-        <input type="checkbox" onChange={selected} />
+        <input type="checkbox" onChange={onSelect} />
         Select
       </label>
     </li>
