@@ -5,11 +5,14 @@ const ListItem = (props) => {
     user: { id, fName, lName, isSelected },
     onSelect,
   } = props;
-  //console.log(id);
+
+  const selected = () => {
+    onSelect(props.user);
+  };
 
   const UserDate = () => {
     return (
-      <span className={isSelected ? 'selected' : null}>
+      <span className={isSelected ? 'selected' : undefined}>
         <br />
         UserID: {id}
         <br />
@@ -22,7 +25,7 @@ const ListItem = (props) => {
     <li>
       <UserDate />
       <label>
-        <input type="checkbox" onChange={() => onSelect(props.user)} />
+        <input type="checkbox" onChange={selected} />
         Select
       </label>
     </li>

@@ -11,18 +11,16 @@ class UserList extends Component {
     };
   }
 
-  selectUser = (user) => {
-    const newUsers = [...this.state.users];
-    const index = newUsers.indexOf(user);
-    newUsers[index].isSelected = !newUsers[index].isSelected;
-    this.setState({
-      users: newUsers,
-    });
-  };
-
-  mapUser = (user, index) => {
-    //const { users } = this.state;
-    return <ListItem key={user.id} user={user} onSelect={this.selectUser} />;
+  mapUser = (user) => {
+    const selectUser = (user) => {
+      const newUsers = [...this.state.users];
+      const index = newUsers.indexOf(user);
+      newUsers[index].isSelected = !newUsers[index].isSelected;
+      this.setState({
+        users: newUsers,
+      });
+    };
+    return <ListItem key={user.id} user={user} onSelect={selectUser} />;
   };
 
   render() {
